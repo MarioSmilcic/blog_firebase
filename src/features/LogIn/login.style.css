@@ -1,25 +1,18 @@
-/* .login {
-  display: flex;
-  flex-direction: column;
-  place-items: center;
-  gap: 1em;
-} */
-
 .login {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* min-height: calc(100vh - 7em); */
   padding: 1em;
 }
 
 .login-form {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: #ffffff0d;
   padding: 2em;
   border-radius: 8px;
   width: 100%;
   max-width: 400px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  box-shadow: 0 0 15px 5px rgba(3, 157, 142, 0.7);
 }
 
 .login-form h2 {
@@ -36,41 +29,12 @@
 }
 
 .error-message {
-  background-color: rgba(255, 0, 0, 0.1);
+  background-color: #ff00001a;
   color: #ff6b6b;
   padding: 0.75em;
   border-radius: 4px;
   margin-bottom: 1em;
   text-align: center;
-}
-
-input {
-  padding: 0.75em;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.05);
-  color: white;
-  font-size: 1rem;
-}
-
-input:focus {
-  outline: none;
-  border-color: #039d8e;
-}
-
-button {
-  padding: 0.75em;
-  border: none;
-  border-radius: 4px;
-  background-color: #039d8e;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-button:hover {
-  background-color: #027e73;
 }
 
 .toggle-auth {
@@ -105,7 +69,7 @@ button:hover {
   top: 50%;
   width: 45%;
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #ffffff1a;
 }
 
 .divider::before {
@@ -137,29 +101,6 @@ button:hover {
   padding-left: 0.5em;
 }
 
-input {
-  padding: 0.75em;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.05);
-  color: white;
-  font-size: 1rem;
-  transition: border-color 0.2s ease;
-}
-
-input:focus {
-  outline: none;
-  border-color: #039d8e;
-}
-
-input.error {
-  border-color: #ff6b6b;
-}
-
-input.error:focus {
-  border-color: #ff6b6b;
-}
-
 .submit-button {
   width: 100%;
   padding: 0.75em;
@@ -175,8 +116,4 @@ input.error:focus {
 
 .submit-button:hover {
   background-color: #027e73;
-}
-
-form {
-  width: 100%;
 }
