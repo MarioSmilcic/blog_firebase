@@ -28,3 +28,43 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
+
+input,
+textarea {
+  padding: 0.75em;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #039d8e;
+}
+
+input.error {
+  border-color: #ff6b6b;
+}
+
+input.error:focus {
+  border-color: #ff6b6b;
+}
+
+button {
+  padding: 0.75em;
+  border: none;
+  border-radius: 4px;
+  background-color: #039d8e;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #027e73;
+}
