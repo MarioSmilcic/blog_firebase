@@ -64,3 +64,22 @@
 .delete-button:hover {
   background-color: #bd2130;
 }
+.close-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  padding: 0.25em 0.5em;
+  border-radius: 8px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.close-button:hover {
+  background-color: rgba(3, 157, 142, 0.1);
+  color: #039d8e;
+}
