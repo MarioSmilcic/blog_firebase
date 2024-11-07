@@ -7,6 +7,7 @@ import Button from "../../components/Button/Button";
 import { useNotificationsStore } from "../../store/notifications/notifications.store";
 import { createPostSchema } from "../../validation/createPostSchema";
 import "./createPost.styles.css";
+import TypewriterEffect from "../../components/TypewritterEffect/TyperwritterEffect";
 
 const CreatePost = () => {
   const navigate = useNavigate();
@@ -49,7 +50,9 @@ const CreatePost = () => {
 
   return (
     <div className="createPost">
-      <h2>Create Post</h2>
+      <h2>
+        <TypewriterEffect text="Create Post" speed={150} />
+      </h2>
       <form onSubmit={handleSubmit(onSubmit)} className="createPost-form">
         <div className="createPost-input">
           <label htmlFor="title">Title:</label>

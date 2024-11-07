@@ -11,6 +11,9 @@ export const getButtonClass = (text) => {
     case "Delete":
       classes = "delete-button";
       break;
+    case "×":
+      classes = "close-button";
+      break;
     case "Sign In":
     case "Sign Up":
       classes = "toggle-button";
