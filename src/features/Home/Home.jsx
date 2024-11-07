@@ -7,6 +7,7 @@ import BlogPost from "./components/BlogPost";
 import DeleteModal from "../../components/modals/DeleteModal/DeleteModal";
 import EditModal from "../../components/modals/EditModal/EditModal";
 import Backdrop from "../../components/modals/Backdrop/Backdrop";
+import TypewriterEffect from "../../components/TypewritterEffect/TyperwritterEffect";
 
 const Home = () => {
   const isOpen = useModalsStore((state) => state.isOpen);
@@ -28,7 +29,9 @@ const Home = () => {
   return (
     <>
       <div className="home">
-        <h1>Blog</h1>
+        <h1>
+          <TypewriterEffect text="Welcome to my Blog" speed={150} />
+        </h1>
         {posts.map((post) => (
           <BlogPost
             key={post.id}
