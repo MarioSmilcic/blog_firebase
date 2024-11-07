@@ -1,0 +1,52 @@
+.notification {
+  position: fixed;
+  top: 6em;
+  right: 2em;
+  z-index: 1100;
+  min-width: 300px;
+  max-width: 400px;
+  animation: slideLeft 0.3s ease-out;
+}
+
+.notification .notification-card {
+  text-align: center;
+  padding: 1em;
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.notification .notification-card.created {
+  border: 1px solid #00ff9d;
+  box-shadow: 0 0 20px rgba(0, 255, 157, 0.3);
+  background-color: rgba(0, 255, 157, 0.05);
+}
+
+.notification .notification-card.updated {
+  border: 1px solid #00c3ff;
+  box-shadow: 0 0 20px rgba(0, 195, 255, 0.3);
+  background-color: rgba(0, 195, 255, 0.05);
+}
+
+.notification .notification-card.deleted {
+  border: 1px solid #ff3b30;
+  box-shadow: 0 0 20px rgba(255, 59, 48, 0.3);
+  background-color: rgba(255, 59, 48, 0.05);
+}
+
+.notification .notification-card.error {
+  border: 1px solid #ff1a1a;
+  box-shadow: 0 0 20px rgba(255, 26, 26, 0.3);
+  background-color: rgba(255, 26, 26, 0.05);
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

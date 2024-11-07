@@ -11,7 +11,7 @@ export const baseSchema = {
     .min(6, "Password must be at least 6 characters"),
 };
 
-export const validationSchema = (isNewUser) =>
+export const loginSchema = (isNewUser) =>
   yup.object({
     ...baseSchema,
     ...(isNewUser && {

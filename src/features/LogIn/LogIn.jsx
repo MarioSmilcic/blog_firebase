@@ -3,8 +3,9 @@ import { useState } from "react";
 import { useAuth } from "../../hooks/useAuth";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { validationSchema } from "./helpers/validation";
+import { loginSchema } from "../../validation/loginSchema";
 import { loginInputs } from "./helpers/loginInputs";
+import Button from "../../components/Button/Button";
 
 const Login = () => {
   const [isNewUser, setIsNewUser] = useState(false);
@@ -16,7 +17,7 @@ const Login = () => {
     formState: { errors },
     reset,
   } = useForm({
-    resolver: yupResolver(validationSchema(isNewUser)),
+    resolver: yupResolver(loginSchema(isNewUser)),
     mode: "onChange",
   });
 
@@ -32,20 +33,6 @@ const Login = () => {
     }
   };
 
-  const loginInput = ({ id, name, type, placeholder }) => (
-    <div key={id} className="input-group">
-      <input
-        type={type}
-        placeholder={placeholder}
-        {...register(name)}
-        className={errors[name] ? "error" : ""}
-      />
-      {errors[name] && (
-        <span className="error-text">{errors[name].message}</span>
-      )}
-    </div>
-  );
-
   return (
     <div className="login">
       <div className="login-form">
@@ -57,16 +44,27 @@ const Login = () => {
             .filter(
               (input) => !input.signupOnly || (input.signupOnly && isNewUser)
             )
-            .map(loginInput)}
+            .map(({ id, name, type, placeholder }) => (
+              <div key={id} className="input-group">
+                <input
+                  type={type}
+                  placeholder={placeholder}
+                  {...register(name)}
+                  className={errors[name] ? "error" : ""}
+                />
+                {errors[name] && (
+                  <span className="error-text">{errors[name].message}</span>
+                )}
+              </div>
+            ))}
 
-          <button type="submit">{isNewUser ? "Sign Up" : "Sign In"}</button>
+          <Button type="submit" text={isNewUser ? "Sign Up" : "Sign In"} />
         </form>
 
-        <p className="toggle-auth">
+        <div className="account-prompt">
           {isNewUser ? "Already have an account? " : "Need an account? "}
           <button
-            type="button"
-            className="toggle-button"
+            className="toggle-text"
             onClick={() => {
               setIsNewUser(!isNewUser);
               reset();
@@ -74,17 +72,15 @@ const Login = () => {
           >
             {isNewUser ? "Sign In" : "Sign Up"}
           </button>
-        </p>
+        </div>
 
         <div className="divider">or</div>
 
-        <button
-          type="button"
-          className="google-button"
+        <Button
+          text="Sign in with Google"
+          disabled={false}
           onClick={signInWithGoogle}
-        >
-          Sign in with Google
-        </button>
+        />
       </div>
     </div>
   );

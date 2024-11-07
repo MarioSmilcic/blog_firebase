@@ -36,10 +36,12 @@ const Navigation = () => {
 
   return (
     <div className="navigation">
-      <div className="logo">Blog</div>
+      <div className="logo" onClick={() => navigate("/")}>
+        Blog
+      </div>
 
       <div className="links">
-        <Link to="/">Home</Link>
+        {/* <Link to="/">Home</Link> */}
         {isAuth && (
           <>
             <Link to="/create-post">Create Post</Link>
