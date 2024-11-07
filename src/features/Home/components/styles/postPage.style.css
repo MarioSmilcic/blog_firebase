@@ -1,0 +1,155 @@
+.post-page {
+  padding: 2em;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.post-page .card {
+  padding: 3em;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  box-shadow: 0 0 15px 5px rgba(3, 157, 142, 0.7);
+}
+
+.post-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.post-content h1 {
+  color: #039d8e;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+.post-metadata {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.post-body {
+  color: rgba(255, 255, 255, 0.87);
+  line-height: 1.8;
+  font-size: 1.1rem;
+  white-space: pre-wrap;
+  text-align: justify;
+  min-height: 200px;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1em;
+  margin-top: 2em;
+  padding-top: 1.5em;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.author {
+  font-style: italic;
+}
+
+.loading {
+  text-align: center;
+  color: #039d8e;
+  font-size: 1.2rem;
+  padding: 2em;
+}
+
+.error {
+  text-align: center;
+  color: #ff6b6b;
+  background-color: rgba(255, 107, 107, 0.1);
+  padding: 1.5em;
+  border-radius: 8px;
+  margin: 2em 0;
+}
+
+.blog-post__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.blog-post__icon svg {
+  fill: rgba(255, 255, 255, 0.6);
+  transition: all 0.2s ease;
+  width: 24px;
+  height: 24px;
+}
+
+.icon-delete:hover {
+  background-color: rgba(255, 59, 48, 0.1);
+  transform: scale(1.1);
+}
+
+.icon-delete:hover svg {
+  fill: #ff3b30;
+}
+
+.icon-edit:hover {
+  background-color: rgba(3, 157, 142, 0.1);
+  transform: scale(1.1);
+}
+
+.icon-edit:hover svg {
+  fill: #039d8e;
+}
+
+@media (max-width: 768px) {
+  .post-page {
+    padding: 1em;
+  }
+
+  .post-page .card {
+    padding: 2em;
+  }
+
+  .post-content h1 {
+    font-size: 2rem;
+  }
+
+  .post-body {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .post-page .card {
+    padding: 1.5em;
+  }
+
+  .post-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .post-metadata {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
+  }
+
+  .post-body {
+    font-size: 0.95rem;
+  }
+
+  .blog-post__icon {
+    padding: 6px;
+  }
+
+  .blog-post__icon svg {
+    width: 20px;
+    height: 20px;
+  }
+}

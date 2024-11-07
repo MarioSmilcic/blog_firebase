@@ -1,0 +1,87 @@
+.editModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30;
+  width: 90%;
+  max-width: 600px;
+  animation: slideIn 0.3s ease-out;
+}
+
+.editModal h2 {
+  color: #039d8e;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.editModal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.editModal__input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.editModal__input label {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.editModal__input input,
+.editModal__textarea {
+  padding: 0.75em;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+  font-family: inherit;
+}
+
+.editModal__input input:focus,
+.editModal__textarea:focus {
+  outline: none;
+  border-color: #039d8e;
+}
+
+.editModal__textarea {
+  resize: vertical;
+  min-height: 150px;
+  max-height: 300px;
+}
+
+.editModal__input input.error,
+.editModal__textarea.error {
+  border-color: #ff6b6b;
+}
+
+.error-text {
+  color: #ff6b6b;
+  font-size: 0.875rem;
+  margin-top: 0.25em;
+}
+
+.editModal__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5em;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translate(-50%, -60%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
