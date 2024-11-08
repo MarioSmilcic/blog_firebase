@@ -3,6 +3,7 @@ import Home from "./features/Home/Home";
 import About from "./features/About/About";
 import Contact from "./features/Contact/Contact";
 import Navigation from "./features/Navigation/Navigation";
+// import LogIn from "./features/Login/Login";
 import Login from "./features/Login/Login";
 import CreatePost from "./features/CreatePost/CreatePost";
 import ProtectedRoute from "./components/ProtectedRoute";
