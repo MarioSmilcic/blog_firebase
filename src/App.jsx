@@ -8,10 +8,8 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Notification from "./components/Notification/Notification";
 import PostPage from "./features/Home/components/PostPage";
 import Footer from "./features/Footer/Footer";
-import Login from "./features/Login/Login";
+import Login from "./features/Login/LogIn";
 
-/*************  ✨ Codeium Command ⭐  *************/
-/******  3554de29-06d2-47f1-8d9e-d08dabcd3e86  *******/
 const App = () => {
   return (
     <>
