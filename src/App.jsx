@@ -8,7 +8,8 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Notification from "./components/Notification/Notification";
 import PostPage from "./features/Home/components/PostPage";
 import Footer from "./features/Footer/Footer";
-import Login from "./features/Login/Login";
+// import Login from "./features/LogIn/LogIn";
+import Login from "./features/Login/LogIn";
 
 const App = () => {
   return (
