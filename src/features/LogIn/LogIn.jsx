@@ -6,6 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { loginSchema } from "../../validation/loginSchema";
 import { loginInputs } from "./helpers/loginInputs";
 import Button from "../../components/Button/Button";
+import Login from "./Login";
 
 const Login = () => {
   const [isNewUser, setIsNewUser] = useState(false);
