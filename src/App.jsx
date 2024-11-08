@@ -8,6 +8,7 @@ import CreatePost from "./features/CreatePost/CreatePost";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Notification from "./components/Notification/Notification";
 import PostPage from "./features/Home/components/PostPage";
+import Footer from "./features/Footer/Footer";
 
 const App = () => {
   return (
@@ -44,6 +45,7 @@ const App = () => {
             }
           />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );
