@@ -10,8 +10,6 @@ import PostPage from "./features/Home/components/PostPage";
 import Footer from "./features/Footer/Footer";
 import Login from "./features/Login/Login";
 
-/*************  ✨ Codeium Command ⭐  *************/
-/******  3554de29-06d2-47f1-8d9e-d08dabcd3e86  *******/
 const App = () => {
   return (
     <>
