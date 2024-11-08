@@ -4,7 +4,6 @@ import About from "./features/About/About";
 import Contact from "./features/Contact/Contact";
 import Navigation from "./features/Navigation/Navigation";
 import Login from "./features/Login/Login";
-import Login from "./features/";
 import CreatePost from "./features/CreatePost/CreatePost";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Notification from "./components/Notification/Notification";
