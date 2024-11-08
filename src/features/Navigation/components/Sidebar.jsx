@@ -61,7 +61,7 @@ const Sidebar = ({ isOpen, onClose }) => {
             </>
           ) : (
             <Link to="/login" onClick={onClose}>
-              LogIn
+              Login
             </Link>
           )}
         </nav>
