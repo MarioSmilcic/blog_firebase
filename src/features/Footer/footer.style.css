@@ -1,0 +1,42 @@
+.footer {
+  margin-top: auto;
+  padding: 1em 2em;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2em;
+  border-top: 1px solid rgba(3, 157, 142, 0.2);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 0.3em;
+  gap: 2em;
+}
+
+.social-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.social-links a:hover {
+  color: #039d8e;
+}
+
+.social-links svg {
+  fill: currentColor;
+}
+
+@media (max-width: 480px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5em;
+  }
+}

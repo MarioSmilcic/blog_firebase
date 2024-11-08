@@ -34,6 +34,66 @@
   text-align: justify;
 }
 
+.technologies-section {
+  margin-top: 2em;
+  padding-top: 2em;
+  border-top: 1px solid rgba(3, 157, 142, 0.3);
+}
+
+.technologies-section h2 {
+  color: #039d8e;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2em;
+}
+
+.tech-category {
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 1.5em;
+  border-radius: 8px;
+  border: 1px solid rgba(3, 157, 142, 0.2);
+  transition: all 0.3s ease;
+}
+
+.tech-category:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(3, 157, 142, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(3, 157, 142, 0.2);
+}
+
+.tech-category h3 {
+  color: #039d8e;
+  font-size: 1.3rem;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.tech-category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tech-category li {
+  color: rgba(255, 255, 255, 0.87);
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.02);
+  transition: all 0.2s ease;
+}
+
+.tech-category li:hover {
+  background-color: rgba(3, 157, 142, 0.1);
+  padding-left: 1em;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -56,5 +116,18 @@
 
   .about p {
     font-size: 1rem;
+  }
+
+  .technologies-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .tech-category h3 {
+    font-size: 1.2rem;
+  }
+
+  .tech-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5em;
   }
 }
