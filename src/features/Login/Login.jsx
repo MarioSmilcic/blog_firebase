@@ -52,6 +52,13 @@ const Login = () => {
                   {...register(name)}
                   className={errors[name] ? "error" : ""}
                   disabled={isLoading}
+                  autoComplete={
+                    name === "email"
+                      ? "email"
+                      : name === "password"
+                      ? "current-password"
+                      : "new-password"
+                  }
                 />
                 {errors[name] && (
                   <span className="error-text">{errors[name].message}</span>

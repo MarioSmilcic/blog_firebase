@@ -77,6 +77,7 @@ const EditModal = () => {
               {...register("title")}
               disabled={isPending}
               className={errors.title ? "error" : ""}
+              autoComplete="off"
             />
             {errors.title && (
               <span className="error-text">{errors.title.message}</span>
