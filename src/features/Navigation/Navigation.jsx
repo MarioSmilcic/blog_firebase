@@ -67,7 +67,7 @@ const Navigation = () => {
 
           <div className="auth-section">
             {!isAuth ? (
-              <Link to="/login">LogIn</Link>
+              <Link to="/login">Login</Link>
             ) : (
               <div className="user-profile">
                 <span className="user-name">{userName}</span>
