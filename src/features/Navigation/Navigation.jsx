@@ -46,7 +46,6 @@ const Navigation = () => {
     <>
       <div className="navigation">
         <div className="logo" onClick={() => navigate("/")}>
-          {/* Blog */}
           <TypewriterEffect text="Blog" speed={100} />
         </div>
 
@@ -67,7 +66,7 @@ const Navigation = () => {
 
           <div className="auth-section">
             {!isAuth ? (
-              <Link to="/login">Login</Link>
+              <Button text="LogIn" onClick={() => navigate("/login")} />
             ) : (
               <div className="user-profile">
                 <span className="user-name">{userName}</span>
