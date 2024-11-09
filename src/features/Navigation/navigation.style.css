@@ -90,6 +90,12 @@
 .auth-section {
   display: flex;
   align-items: center;
+  gap: 1em;
+}
+
+.auth-section .login-button {
+  margin-left: 1em;
+  backdrop-filter: blur(8px);
 }
 
 .user-profile {
@@ -172,5 +178,9 @@
 
   .logo {
     font-size: 2rem;
+  }
+  .auth-section .login-button {
+    font-size: 1rem;
+    padding: 0.4em 1.2em;
   }
 }

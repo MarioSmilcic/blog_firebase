@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Context/AuthContext";
 import Button from "../../../components/Button/Button";
 import "../components/styles/sidebar.style.css";
+import TypewriterEffect from "../../../components/TypewritterEffect/TyperwritterEffect";
 
 const Sidebar = ({ isOpen, onClose }) => {
   const { isAuth, setIsAuth } = useContext(AuthContext);
@@ -34,7 +35,7 @@ const Sidebar = ({ isOpen, onClose }) => {
               onClose();
             }}
           >
-            Blog
+            <TypewriterEffect text="Blog" speed={100} />
           </div>
           <Button text="×" onClick={onClose} />
         </div>
@@ -60,9 +61,13 @@ const Sidebar = ({ isOpen, onClose }) => {
               </div>
             </>
           ) : (
-            <Link to="/login" onClick={onClose}>
-              Login
-            </Link>
+            <Button
+              text="LogIn"
+              onClick={() => {
+                navigate("/login");
+                onClose();
+              }}
+            />
           )}
         </nav>
       </div>
