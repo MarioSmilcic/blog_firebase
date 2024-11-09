@@ -9,7 +9,7 @@ import Button from "../../components/Button/Button";
 
 const Login = () => {
   const [isNewUser, setIsNewUser] = useState(false);
-  const { error, handleEmailAuth, signInWithGoogle } = useAuth();
+  const { error, isLoading, handleEmailAuth, signInWithGoogle } = useAuth();
 
   const {
     register,
@@ -51,6 +51,7 @@ const Login = () => {
                   placeholder={placeholder}
                   {...register(name)}
                   className={errors[name] ? "error" : ""}
+                  disabled={isLoading}
                 />
                 {errors[name] && (
                   <span className="error-text">{errors[name].message}</span>
@@ -58,7 +59,13 @@ const Login = () => {
               </div>
             ))}
 
-          <Button type="submit" text={isNewUser ? "Sign Up" : "Sign In"} />
+          <Button
+            type="submit"
+            text={
+              isLoading ? "Please wait..." : isNewUser ? "Sign Up" : "Sign In"
+            }
+            disabled={isLoading}
+          />
         </form>
 
         <div className="account-prompt">
@@ -69,6 +76,7 @@ const Login = () => {
               setIsNewUser(!isNewUser);
               reset();
             }}
+            disabled={isLoading}
           >
             {isNewUser ? "Sign In" : "Sign Up"}
           </button>
@@ -77,9 +85,9 @@ const Login = () => {
         <div className="divider">or</div>
 
         <Button
-          text="Sign in with Google"
-          disabled={false}
+          text={isLoading ? "Please wait..." : "Sign in with Google"}
           onClick={signInWithGoogle}
+          disabled={isLoading}
         />
       </div>
     </div>
