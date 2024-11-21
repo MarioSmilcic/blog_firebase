@@ -49,9 +49,9 @@ const Sidebar = ({ isOpen, onClose }) => {
               <Link to="/about" onClick={onClose}>
                 About
               </Link>
-              {/* <Link to="/contact" onClick={onClose}>
+              <Link to="/contact" onClick={onClose}>
                 Contact
-              </Link> */}
+              </Link>
               <div className="sidebar-auth">
                 <span className="user-name">
                   {auth.currentUser?.displayName ||

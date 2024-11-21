@@ -59,7 +59,7 @@ const Navigation = () => {
               <>
                 <Link to="/create-post">Create Post</Link>
                 <Link to="/about">About</Link>
-                {/* <Link to="/contact">Contact</Link> */}
+                <Link to="/contact">Contact</Link>
               </>
             )}
           </div>
