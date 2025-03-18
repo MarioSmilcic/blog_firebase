@@ -1,0 +1,45 @@
+.auth-section {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.auth-section .login-button {
+  margin-left: 1em;
+  backdrop-filter: blur(8px);
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 0.5em 1em;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(3, 157, 142, 0.3);
+  box-shadow: 0 0 10px rgba(3, 157, 142, 0.1);
+  transition: all 0.2s ease;
+}
+
+.user-profile:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(3, 157, 142, 0.5);
+  box-shadow: 0 0 15px rgba(3, 157, 142, 0.2);
+}
+
+.user-name {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.25em 0.5em;
+  border-radius: 4px;
+  background-color: rgba(3, 157, 142, 0.1);
+  border: 1px solid rgba(3, 157, 142, 0.2);
+}
+
+@media (max-width: 768px) {
+  .auth-section .login-button {
+    font-size: 1rem;
+    padding: 0.4em 1.2em;
+  }
+}

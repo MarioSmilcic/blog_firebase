@@ -18,13 +18,16 @@ export const useAuthProvider = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [userName, setUserName] = useState("");
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setIsAuth(true);
+        setUserName(user.displayName || user.email.split("@")[0]);
       } else {
         setIsAuth(false);
+        setUserName("");
       }
       setLoading(false);
     });
@@ -104,6 +107,7 @@ export const useAuthProvider = () => {
     loading,
     error,
     isLoading,
+    userName,
     handleEmailAuth,
     signInWithGoogle,
     handleLogout,
