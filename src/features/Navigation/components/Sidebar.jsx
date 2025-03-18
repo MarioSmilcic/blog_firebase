@@ -4,20 +4,13 @@ import { auth } from "../../../firebase-config";
 import { useContext } from "react";
 import { AuthContext } from "../../../Context/AuthContext";
 import Button from "../../../components/Button/Button";
+import LogoutButton from "../../../components/LogoutButton/LogoutButton";
 import "../components/styles/sidebar.style.css";
 import TypewriterEffect from "../../../components/TypewritterEffect/TyperwritterEffect";
 
 const Sidebar = ({ isOpen, onClose }) => {
-  const { isAuth, handleLogout } = useContext(AuthContext);
+  const { isAuth } = useContext(AuthContext);
   const navigate = useNavigate();
-
-  const handleSidebarLogout = async () => {
-    const success = await handleLogout();
-    if (success) {
-      navigate("/login");
-      onClose();
-    }
-  };
 
   return (
     <>
@@ -53,7 +46,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                   {auth.currentUser?.displayName ||
                     auth.currentUser?.email?.split("@")[0]}
                 </span>
-                <Button text="LogOut" onClick={handleSidebarLogout} />
+                <LogoutButton onSuccess={onClose} />
               </div>
             </>
           ) : (
@@ -74,7 +67,6 @@ const Sidebar = ({ isOpen, onClose }) => {
 export default Sidebar;
 // import { Link } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
-// import { signOut } from "firebase/auth";
 // import { auth } from "../../../firebase-config";
 // import { useContext } from "react";
 // import { AuthContext } from "../../../Context/AuthContext";
@@ -83,17 +75,14 @@ export default Sidebar;
 // import TypewriterEffect from "../../../components/TypewritterEffect/TyperwritterEffect";
 
 // const Sidebar = ({ isOpen, onClose }) => {
-//   const { isAuth, setIsAuth } = useContext(AuthContext);
+//   const { isAuth, handleLogout } = useContext(AuthContext);
 //   const navigate = useNavigate();
 
-//   const handleLogout = async () => {
-//     try {
-//       await signOut(auth);
-//       setIsAuth(false);
+//   const handleSidebarLogout = async () => {
+//     const success = await handleLogout();
+//     if (success) {
 //       navigate("/login");
 //       onClose();
-//     } catch (error) {
-//       console.error(error);
 //     }
 //   };
 
@@ -131,7 +120,7 @@ export default Sidebar;
 //                   {auth.currentUser?.displayName ||
 //                     auth.currentUser?.email?.split("@")[0]}
 //                 </span>
-//                 <Button text="LogOut" onClick={handleLogout} />
+//                 <Button text="LogOut" onClick={handleSidebarLogout} />
 //               </div>
 //             </>
 //           ) : (

@@ -5,11 +5,12 @@ import { auth } from "../../firebase-config";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthContext";
 import Button from "../../components/Button/Button";
+import LogoutButton from "../../components/LogoutButton/LogoutButton";
 import Sidebar from "./components/Sidebar";
 import TypewriterEffect from "../../components/TypewritterEffect/TyperwritterEffect";
 
 const Navigation = () => {
-  const { isAuth, handleLogout } = useContext(AuthContext);
+  const { isAuth } = useContext(AuthContext);
   const [userName, setUserName] = useState("");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const navigate = useNavigate();
@@ -25,13 +26,6 @@ const Navigation = () => {
 
     return () => unsubscribe();
   }, []);
-
-  const handleLogoutClick = async () => {
-    const success = await handleLogout();
-    if (success) {
-      navigate("/login");
-    }
-  };
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -65,7 +59,7 @@ const Navigation = () => {
             ) : (
               <div className="user-profile">
                 <span className="user-name">{userName}</span>
-                <Button text="LogOut" onClick={handleLogoutClick} />
+                <LogoutButton />
               </div>
             )}
           </div>
@@ -81,7 +75,6 @@ export default Navigation;
 // import { Link } from "react-router-dom";
 // import "./navigation.style.css";
 // import { useNavigate } from "react-router-dom";
-// import { signOut } from "firebase/auth";
 // import { auth } from "../../firebase-config";
 // import { useContext, useEffect, useState } from "react";
 // import { AuthContext } from "../../Context/AuthContext";
@@ -90,7 +83,7 @@ export default Navigation;
 // import TypewriterEffect from "../../components/TypewritterEffect/TyperwritterEffect";
 
 // const Navigation = () => {
-//   const { isAuth, setIsAuth } = useContext(AuthContext);
+//   const { isAuth, handleLogout } = useContext(AuthContext);
 //   const [userName, setUserName] = useState("");
 //   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 //   const navigate = useNavigate();
@@ -107,14 +100,10 @@ export default Navigation;
 //     return () => unsubscribe();
 //   }, []);
 
-//   const handleLogout = async () => {
-//     try {
-//       await signOut(auth);
-//       setIsAuth(false);
-//       setUserName("");
+//   const handleLogoutClick = async () => {
+//     const success = await handleLogout();
+//     if (success) {
 //       navigate("/login");
-//     } catch (error) {
-//       console.error(error);
 //     }
 //   };
 
@@ -150,7 +139,7 @@ export default Navigation;
 //             ) : (
 //               <div className="user-profile">
 //                 <span className="user-name">{userName}</span>
-//                 <Button text="LogOut" onClick={handleLogout} />
+//                 <Button text="LogOut" onClick={handleLogoutClick} />
 //               </div>
 //             )}
 //           </div>
