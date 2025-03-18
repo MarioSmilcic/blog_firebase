@@ -1,35 +1,116 @@
-import { createContext, useContext } from "react";
-import { useAuthProvider } from "./useAuthProvider";
+import { useState, useEffect } from "react";
+import { auth, provider } from "../firebase-config";
+import {
+  onAuthStateChanged,
+  signInWithPopup,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  browserPopupRedirectResolver,
+  signOut,
+} from "firebase/auth";
+import {
+  getAuthErrorMessage,
+  authErrorMessages,
+} from "../utils/authErrorMessages";
 
-export const AuthContext = createContext();
+export const useAuthProvider = () => {
+  const [isAuth, setIsAuth] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-export const AuthProvider = ({ children }) => {
-  const auth = useAuthProvider();
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setIsAuth(true);
+      } else {
+        setIsAuth(false);
+      }
+      setLoading(false);
+    });
 
-  if (auth.loading) {
-    return <div>Loading...</div>;
-  }
+    return () => unsubscribe();
+  }, []);
 
-  return <AuthContext.Provider value={auth}>{children}</AuthContext.Provider>;
+  const handleEmailAuth = async (email, password, isNewUser) => {
+    try {
+      setError("");
+      setIsLoading(true);
+
+      if (isNewUser) {
+        await createUserWithEmailAndPassword(auth, email, password);
+      } else {
+        await signInWithEmailAndPassword(auth, email, password);
+      }
+
+      return true; // Success indicator
+    } catch (error) {
+      setError(getAuthErrorMessage(error.code, error.message));
+
+      // Preserve the special return values for specific error cases
+      if (error.code === "auth/email-already-in-use") {
+        return false;
+      }
+      if (error.code === "auth/user-not-found") {
+        return true;
+      }
+
+      return false;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const signInWithGoogle = async () => {
+    try {
+      setError("");
+      setIsLoading(true);
+
+      await signInWithPopup(auth, provider, browserPopupRedirectResolver);
+      return true;
+    } catch (error) {
+      if (
+        [
+          "auth/popup-blocked",
+          "auth/popup-closed-by-user",
+          "auth/unauthorized-domain",
+        ].includes(error.code)
+      ) {
+        setError(getAuthErrorMessage(error.code, error.message));
+      } else {
+        setError(authErrorMessages.googleSignInError(error.message));
+      }
+
+      return false;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      setIsAuth(false);
+      return true;
+    } catch (error) {
+      setError(authErrorMessages.logoutError(error.message));
+      return false;
+    }
+  };
+
+  return {
+    isAuth,
+    setIsAuth,
+    loading,
+    error,
+    isLoading,
+    handleEmailAuth,
+    signInWithGoogle,
+    handleLogout,
+  };
 };
 
-export const useAuth = () => useContext(AuthContext);
-// import { createContext } from "react";
-// import { useAuthProvider } from "./useAuthProvider";
-
-// export const AuthContext = createContext();
-
-// export const AuthProvider = ({ children }) => {
-//   const auth = useAuthProvider();
-
-//   if (auth.loading) {
-//     return <div>Loading...</div>;
-//   }
-
-//   return <AuthContext.Provider value={auth}>{children}</AuthContext.Provider>;
-// };
-
-// import { createContext, useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 // import { auth, provider } from "../firebase-config";
 // import {
 //   onAuthStateChanged,
@@ -40,9 +121,7 @@ export const useAuth = () => useContext(AuthContext);
 //   signOut,
 // } from "firebase/auth";
 
-// export const AuthContext = createContext();
-
-// export const AuthProvider = ({ children }) => {
+// export const useAuthProvider = () => {
 //   const [isAuth, setIsAuth] = useState(false);
 //   const [loading, setLoading] = useState(true);
 //   const [error, setError] = useState("");
@@ -143,58 +222,14 @@ export const useAuth = () => useContext(AuthContext);
 //     }
 //   };
 
-//   if (loading) {
-//     return <div>Loading...</div>;
-//   }
-
-//   return (
-//     <AuthContext.Provider
-//       value={{
-//         isAuth,
-//         setIsAuth,
-//         error,
-//         isLoading,
-//         handleEmailAuth,
-//         signInWithGoogle,
-//         handleLogout,
-//       }}
-//     >
-//       {children}
-//     </AuthContext.Provider>
-//   );
-// };
-
-//older
-// import { createContext, useState, useEffect } from "react";
-// import { auth } from "../firebase-config";
-// import { onAuthStateChanged } from "firebase/auth";
-
-// export const AuthContext = createContext();
-
-// export const AuthProvider = ({ children }) => {
-//   const [isAuth, setIsAuth] = useState(false);
-//   const [loading, setLoading] = useState(true);
-
-//   useEffect(() => {
-//     const unsubscribe = onAuthStateChanged(auth, (user) => {
-//       if (user) {
-//         setIsAuth(true);
-//       } else {
-//         setIsAuth(false);
-//       }
-//       setLoading(false);
-//     });
-
-//     return () => unsubscribe();
-//   }, []);
-
-//   if (loading) {
-//     return <div>Loading...</div>;
-//   }
-
-//   return (
-//     <AuthContext.Provider value={{ isAuth, setIsAuth }}>
-//       {children}
-//     </AuthContext.Provider>
-//   );
+//   return {
+//     isAuth,
+//     setIsAuth,
+//     loading,
+//     error,
+//     isLoading,
+//     handleEmailAuth,
+//     signInWithGoogle,
+//     handleLogout,
+//   };
 // };
