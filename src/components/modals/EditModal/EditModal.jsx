@@ -6,7 +6,7 @@ import Button from "../../Button/Button";
 import { useModalsStore } from "../../../store/modals/modals.store";
 import { useNotificationsStore } from "../../../store/notifications/notifications.store";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { updatePost } from "../../../api/posts";
+import { updatePost } from "../../../services";
 import { editPostSchema } from "../../../validation/editPostSchema";
 import "./editModal.style.css";
 
