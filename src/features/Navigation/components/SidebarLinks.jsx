@@ -12,7 +12,7 @@ export const SidebarLinks = ({ isAuth, userName }) => {
       <Button
         text="LogIn"
         onClick={() => {
-          navigate("/login");
+          navigate("/auth/signin");
           closeSidebar();
         }}
       />
