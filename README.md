@@ -49,14 +49,16 @@ A modern blog platform built with React and Firebase. Share your thoughts with t
    VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id
    ```
 
-   **Note for Recruiters:** Need to test the app? Contact me for a demo version with pre-configured Firebase settings!
+   **Note:** Need to test the app? Contact me for a demo version with pre-configured Firebase settings!
 
 3. Start the development server:
    ```bash
    npm run dev
    ```
 
-## Firebase Setup (For Recruiters)
+## Firebase Setup
+
+If you need to set up your own Firebase project:
 
 1. Go to [Firebase Console](https://console.firebase.google.com/)
 2. Create a new project

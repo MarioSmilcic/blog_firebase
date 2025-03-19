@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "../home.style.css";
-import TrashIcon from "../../../components/icons/TrashIcon";
-import EditIcon from "../../../components/icons/EditIcon";
+import { TrashIcon, EditIcon } from "../../../components/icons";
+
 import { useModalsStore } from "../../../store/modals/modals.store";
 import { auth } from "../../../services";
 
