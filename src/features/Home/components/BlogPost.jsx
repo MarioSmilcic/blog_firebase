@@ -3,7 +3,7 @@ import "../home.style.css";
 import TrashIcon from "../../../components/icons/TrashIcon";
 import EditIcon from "../../../components/icons/EditIcon";
 import { useModalsStore } from "../../../store/modals/modals.store";
-import { auth } from "../../../firebase-config";
+import { auth } from "../../../services";
 
 const BlogPost = ({ id, title, content: blogPost, author, authorId }) => {
   const navigate = useNavigate();

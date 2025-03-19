@@ -1,7 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { auth } from "../../../firebase-config";
-import { fetchPost } from "../../../api/posts";
+import { auth, fetchPost } from "../../../services";
 import Card from "../../../components/Card/Card";
 import TrashIcon from "../../../components/icons/TrashIcon";
 import EditIcon from "../../../components/icons/EditIcon";
