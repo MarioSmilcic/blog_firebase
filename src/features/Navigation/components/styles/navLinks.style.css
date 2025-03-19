@@ -1,0 +1,17 @@
+.links a {
+  position: relative;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  padding: 0 1em;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.links a:hover,
+.links a.active {
+  color: #039d8e;
+  background-color: rgba(3, 157, 142, 0.1);
+  box-shadow: 0 0 10px rgba(3, 157, 142, 0.3);
+}

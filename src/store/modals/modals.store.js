@@ -18,4 +18,14 @@ export const useModalsStore = create((set) => ({
       modalType: null,
       post: null,
     }),
+
+  // Sidebar state
+  isSidebarOpen: false,
+
+  openSidebar: () => set({ isSidebarOpen: true }),
+
+  closeSidebar: () => set({ isSidebarOpen: false }),
+
+  toggleSidebar: () =>
+    set((state) => ({ isSidebarOpen: !state.isSidebarOpen })),
 }));

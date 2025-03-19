@@ -27,13 +27,6 @@
   animation: fadeIn 0.3s ease-out;
 }
 
-.sidebar-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2em;
-}
-
 .sidebar-nav {
   display: flex;
   flex-direction: column;
@@ -75,17 +68,6 @@
   border-radius: 4px;
   background-color: rgba(3, 157, 142, 0.1);
   border: 1px solid rgba(3, 157, 142, 0.2);
-}
-.sidebar-nav .login-button {
-  width: 100%;
-  text-align: center;
-  font-size: 1.2rem;
-  padding: 0.75em;
-  backdrop-filter: blur(8px);
-}
-
-.sidebar-nav .button {
-  margin: 0;
 }
 
 @keyframes fadeIn {
