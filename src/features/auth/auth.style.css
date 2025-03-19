@@ -1,11 +1,11 @@
-.login {
+.auth-container {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1em;
 }
 
-.login-form {
+.auth-form {
   background-color: rgba(255, 255, 255, 0.05);
   padding: 2em;
   border-radius: 8px;
@@ -14,7 +14,7 @@
   box-shadow: 0 0 15px 5px rgba(3, 157, 142, 0.7);
 }
 
-.login-form h2 {
+.auth-form h2 {
   text-align: center;
   margin-bottom: 1.5em;
   color: #039d8e;
@@ -55,6 +55,15 @@
   text-align: center;
   margin: 1em 0;
   color: rgba(255, 255, 255, 0.87);
+}
+
+.account-prompt a {
+  color: #039d8e;
+  text-decoration: none;
+}
+
+.account-prompt a:hover {
+  text-decoration: underline;
 }
 
 .divider {

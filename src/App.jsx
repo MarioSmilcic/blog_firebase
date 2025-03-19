@@ -1,9 +1,9 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./features/Home/Home";
 import About from "./features/About/About";
 import Contact from "./features/Contact/Contact";
 import Navigation from "./features/Navigation/Navigation";
-import Login from "./features/Login/Login";
+import Auth from "./features/auth/Auth";
 import CreatePost from "./features/CreatePost/CreatePost";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Notification from "./components/Notification/Notification";
@@ -18,7 +18,7 @@ const App = () => {
         <Notification />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/auth/*" element={<Auth />} />
           <Route path="/post/:postId" element={<PostPage />} />
           <Route
             path="/create-post"
@@ -43,6 +43,10 @@ const App = () => {
                 <Contact />
               </ProtectedRoute>
             }
+          />
+          <Route
+            path="/login"
+            element={<Navigate to="/auth/signin" replace />}
           />
         </Routes>
         <Footer />

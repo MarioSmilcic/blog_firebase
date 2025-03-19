@@ -1,0 +1,10 @@
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.sidebar-header .logo {
+  font-size: 2rem;
+}
