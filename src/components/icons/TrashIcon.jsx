@@ -1,4 +1,4 @@
-const TrashIcon = ({ handleClick }) => {
+export const TrashIcon = ({ handleClick }) => {
   return (
     <div onClick={handleClick} className="blog-post__icon icon-delete">
       <svg
@@ -30,5 +30,3 @@ const TrashIcon = ({ handleClick }) => {
     </div>
   );
 };
-
-export default TrashIcon;

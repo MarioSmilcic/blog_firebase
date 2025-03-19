@@ -1,4 +1,4 @@
-const EditIcon = ({ handleClick }) => {
+export const EditIcon = ({ handleClick }) => {
   return (
     <div onClick={handleClick} className="blog-post__icon icon-edit">
       <svg
@@ -31,5 +31,3 @@ const EditIcon = ({ handleClick }) => {
     </div>
   );
 };
-
-export default EditIcon;
