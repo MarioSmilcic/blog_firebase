@@ -7,7 +7,7 @@ import {
   updateDoc,
   getDoc,
 } from "firebase/firestore";
-import { db, auth } from "../firebase-config";
+import { db, auth } from "./firebase-config";
 
 const postsCollection = collection(db, "posts");
 

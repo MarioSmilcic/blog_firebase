@@ -4,7 +4,7 @@ import Button from "../../Button/Button";
 import { useModalsStore } from "../../../store/modals/modals.store";
 import { useNotificationsStore } from "../../../store/notifications/notifications.store";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { deletePost } from "../../../api/posts";
+import { deletePost } from "../../../services";
 import "./deleteModal.style.css";
 
 const DeleteModal = () => {

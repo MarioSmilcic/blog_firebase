@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { createPost } from "../../api/posts";
+import { createPost } from "../../services";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import { useNotificationsStore } from "../../store/notifications/notifications.store";
