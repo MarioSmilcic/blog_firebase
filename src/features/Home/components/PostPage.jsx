@@ -10,7 +10,7 @@ import {
   Backdrop,
 } from "../../../components";
 
-import { useModalsStore } from "../../../store/modals/modals.store";
+import { useModalsStore } from "../../../store";
 
 import "../components/styles/postPage.style.css";
 

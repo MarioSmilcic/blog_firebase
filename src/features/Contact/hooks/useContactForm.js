@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { contactSchema } from "../../../validation/contactSchema";
-import { useNotificationsStore } from "../../../store/notifications/notifications.store";
+import { contactSchema } from "../../../validation";
+import { useNotificationsStore } from "../../../store";
 
 export const useContactForm = () => {
   const showNotification = useNotificationsStore(

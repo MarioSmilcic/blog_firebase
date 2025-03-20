@@ -1,5 +1,5 @@
 import { Card } from "../../components";
-import { useNotificationsStore } from "../../store/notifications/notifications.store";
+import { useNotificationsStore } from "../../store";
 import "./notification.style.css";
 
 export const Notification = () => {

@@ -1,7 +1,6 @@
 import React from "react";
 import { Button, Card } from "../../../components";
-import { useModalsStore } from "../../../store/modals/modals.store";
-import { useNotificationsStore } from "../../../store/notifications/notifications.store";
+import { useModalsStore, useNotificationsStore } from "../../../store";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { deletePost } from "../../../services";
 import "./deleteModal.style.css";

@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Button, LogoutButton } from "../../../components";
-import { useModalsStore } from "../../../store/modals/modals.store";
+import { useModalsStore } from "../../../store";
 
 export const SidebarLinks = ({ isAuth, userName }) => {
   const navigate = useNavigate();
