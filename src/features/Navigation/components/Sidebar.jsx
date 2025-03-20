@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../Context/AuthContext";
-import { useModalsStore } from "../../../store/modals/modals.store";
+import { useModalsStore } from "../../../store";
 import { SidebarLinks, SidebarHeader } from ".";
 
 export const Sidebar = () => {

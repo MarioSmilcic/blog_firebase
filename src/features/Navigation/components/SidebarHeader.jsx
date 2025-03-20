@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useModalsStore } from "../../../store/modals/modals.store";
+import { useModalsStore } from "../../../store";
 import { Button, TypewriterEffect } from "../../../components";
 
 export const SidebarHeader = () => {

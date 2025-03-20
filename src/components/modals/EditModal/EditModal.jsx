@@ -2,11 +2,10 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Card } from "../../../components";
-import { useModalsStore } from "../../../store/modals/modals.store";
-import { useNotificationsStore } from "../../../store/notifications/notifications.store";
+import { useModalsStore, useNotificationsStore } from "../../../store";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { updatePost } from "../../../services";
-import { editPostSchema } from "../../../validation/editPostSchema";
+import { editPostSchema } from "../../../validation";
 import "./editModal.style.css";
 
 export const EditModal = () => {

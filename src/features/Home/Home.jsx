@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchPosts } from "../../services";
-import { useModalsStore } from "../../store/modals/modals.store";
+import { useModalsStore } from "../../store";
 import "./home.style.css";
 
 import BlogPost from "./components/BlogPost";

@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { loginSchema } from "../../../validation/loginSchema";
+import { loginSchema } from "../../../validation";
 import { AuthContext } from "../../../Context/AuthContext";
 
 export const useAuth = (isSignUp = false) => {

@@ -5,7 +5,7 @@ import { AuthContext } from "../../Context/AuthContext";
 import { TypewriterEffect } from "../../components";
 import { Sidebar, NavLinks, AuthSection, MenuButton } from "./components";
 
-import { useModalsStore } from "../../store/modals/modals.store";
+import { useModalsStore } from "../../store";
 
 const Navigation = () => {
   const { isAuth, userName } = useContext(AuthContext);

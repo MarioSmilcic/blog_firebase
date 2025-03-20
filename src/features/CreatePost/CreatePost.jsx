@@ -3,8 +3,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { createPost } from "../../services";
 import { useNavigate } from "react-router-dom";
-import { useNotificationsStore } from "../../store/notifications/notifications.store";
-import { createPostSchema } from "../../validation/createPostSchema";
+import { useNotificationsStore } from "../../store";
+import { createPostSchema } from "../../validation";
 import "./createPost.styles.css";
 import { Button, TypewriterEffect } from "../../components";
 
