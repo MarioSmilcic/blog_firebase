@@ -1,6 +1,3 @@
-import { useParams, useNavigate } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
-import { auth, fetchPost } from "../../../services";
 import {
   TrashIcon,
   EditIcon,
@@ -9,30 +6,21 @@ import {
   EditModal,
   Backdrop,
 } from "../../../components";
-
-import { useModalsStore } from "../../../store";
-
-import "../components/styles/postPage.style.css";
+import { usePostPage } from "../hooks/usePostPage";
+import "./styles/postPage.style.css";
 
 const PostPage = () => {
-  const { postId } = useParams();
-  const navigate = useNavigate();
-  const isOpen = useModalsStore((state) => state.isOpen);
-  const modalType = useModalsStore((state) => state.modalType);
-  const openModal = useModalsStore((state) => state.openModal);
-
   const {
-    data: post,
+    post,
     isLoading,
     isError,
     error,
-  } = useQuery({
-    queryKey: ["post", postId],
-    queryFn: () => fetchPost(postId),
-    onError: () => {
-      navigate("/");
-    },
-  });
+    isAuthor,
+    isOpen,
+    modalType,
+    handleDelete,
+    handleEdit,
+  } = usePostPage();
 
   if (isLoading) {
     return (
@@ -53,24 +41,6 @@ const PostPage = () => {
       </div>
     );
   }
-
-  const isAuthor = auth.currentUser?.uid === post.author.id;
-
-  const handleDelete = () => {
-    openModal("delete", {
-      id: post.id,
-      title: post.title,
-      onSuccess: () => navigate("/"),
-    });
-  };
-
-  const handleEdit = () => {
-    openModal("edit", {
-      id: post.id,
-      title: post.title,
-      content: post.blogPost,
-    });
-  };
 
   return (
     <>
