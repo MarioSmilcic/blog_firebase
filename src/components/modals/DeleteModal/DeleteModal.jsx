@@ -1,36 +1,11 @@
 import React from "react";
 import { Button, Card } from "../../../components";
-import { useModalsStore, useNotificationsStore } from "../../../store";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { deletePost } from "../../../services";
+import { useDeletePost } from "./hooks/useDeletePost";
 import "./deleteModal.style.css";
 
 export const DeleteModal = () => {
-  const closeModal = useModalsStore((state) => state.closeModal);
-  const post = useModalsStore((state) => state.post);
-  const showNotification = useNotificationsStore(
-    (state) => state.showNotification
-  );
-  const queryClient = useQueryClient();
-
-  const { mutate, isPending, isError, error } = useMutation({
-    mutationFn: deletePost,
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["posts"] });
-      showNotification("Post deleted successfully!", "deleted");
-      closeModal();
-      if (post.onSuccess) {
-        post.onSuccess();
-      }
-    },
-    onError: (error) => {
-      showNotification(error.message, "error");
-    },
-  });
-
-  const handleDelete = () => {
-    mutate(post.id);
-  };
+  const { post, isPending, isError, error, handleDelete, closeModal } =
+    useDeletePost();
 
   return (
     <div className="deleteModal">
