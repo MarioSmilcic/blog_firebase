@@ -1,51 +1,18 @@
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { createPost } from "../../services";
-import { useNavigate } from "react-router-dom";
-import { useNotificationsStore } from "../../store";
-import { createPostSchema } from "../../validation";
-import "./createPost.styles.css";
+import { useCreatePost } from "./hooks/useCreatePost";
 import { Button, TypewriterEffect } from "../../components";
+import "./createPost.styles.css";
 
 const CreatePost = () => {
-  const navigate = useNavigate();
-  const queryClient = useQueryClient();
-  const showNotification = useNotificationsStore(
-    (state) => state.showNotification
-  );
-
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
-  } = useForm({
-    resolver: yupResolver(createPostSchema),
-    mode: "onChange",
-    defaultValues: {
-      title: "",
-      blogPost: "",
-    },
-  });
-
-  const { mutate, isPending, isError, error } = useMutation({
-    mutationFn: createPost,
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["posts"] });
-      showNotification("Post created successfully!", "created");
-      navigate("/");
-    },
-    onError: (error) => {
-      showNotification(error.message, "error");
-    },
-  });
-
-  const onSubmit = (data) => {
-    mutate({
-      title: data.title.trim(),
-      blogPost: data.blogPost.trim(),
-    });
-  };
+    errors,
+    isValid,
+    onSubmit,
+    isPending,
+    isError,
+    error,
+  } = useCreatePost();
 
   return (
     <div className="createPost">
