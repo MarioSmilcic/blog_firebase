@@ -1,6 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
-import { fetchPosts } from "../../services";
-import { useModalsStore } from "../../store";
+import { useHome } from "./hooks/useHome";
 import "./home.style.css";
 
 import BlogPost from "./components/BlogPost";
@@ -13,18 +11,7 @@ import {
 } from "../../components";
 
 const Home = () => {
-  const isOpen = useModalsStore((state) => state.isOpen);
-  const modalType = useModalsStore((state) => state.modalType);
-
-  const {
-    data: posts,
-    isLoading,
-    isError,
-    error,
-  } = useQuery({
-    queryKey: ["posts"],
-    queryFn: fetchPosts,
-  });
+  const { posts, isLoading, isError, error, isOpen, modalType } = useHome();
 
   if (isLoading) return <div className="home">Loading posts...</div>;
   if (isError) return <div className="home">Error: {error.message}</div>;
