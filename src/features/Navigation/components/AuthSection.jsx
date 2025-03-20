@@ -1,5 +1,4 @@
-import Button from "../../../components/Button/Button";
-import LogoutButton from "../../../components/LogoutButton/LogoutButton";
+import { Button, LogoutButton } from "../../../components";
 
 export const AuthSection = ({ isAuth, userName, navigate }) => {
   return (

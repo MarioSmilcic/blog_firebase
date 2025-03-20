@@ -1,12 +1,17 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { auth, fetchPost } from "../../../services";
-import Card from "../../../components/Card/Card";
-import { TrashIcon, EditIcon } from "../../../components/icons";
+import {
+  TrashIcon,
+  EditIcon,
+  Card,
+  DeleteModal,
+  EditModal,
+  Backdrop,
+} from "../../../components";
+
 import { useModalsStore } from "../../../store/modals/modals.store";
-import DeleteModal from "../../../components/modals/DeleteModal/DeleteModal";
-import EditModal from "../../../components/modals/EditModal/EditModal";
-import Backdrop from "../../../components/modals/Backdrop/Backdrop";
+
 import "../components/styles/postPage.style.css";
 
 const PostPage = () => {

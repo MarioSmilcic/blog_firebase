@@ -1,4 +1,4 @@
-import TypewriterEffect from "../../components/TypewritterEffect/TyperwritterEffect";
+import { TypewriterEffect } from "../../components";
 import { aboutContent } from "../../data/app-data";
 import "./about.style.css";
 
