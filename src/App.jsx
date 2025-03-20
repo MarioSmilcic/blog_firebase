@@ -5,10 +5,9 @@ import Contact from "./features/Contact/Contact";
 import Navigation from "./features/Navigation/Navigation";
 import Auth from "./features/auth/Auth";
 import CreatePost from "./features/CreatePost/CreatePost";
-import ProtectedRoute from "./components/ProtectedRoute";
-import Notification from "./components/Notification/Notification";
 import PostPage from "./features/Home/components/PostPage";
 import Footer from "./features/Footer/Footer";
+import { ProtectedRoute, Notification } from "./components";
 
 const App = () => {
   return (

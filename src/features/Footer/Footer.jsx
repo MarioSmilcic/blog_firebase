@@ -1,4 +1,4 @@
-import { GithubIcon, LinkedInIcon } from "../../components/icons";
+import { GithubIcon, LinkedInIcon } from "../../components";
 
 import "./footer.style.css";
 

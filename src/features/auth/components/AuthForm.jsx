@@ -1,7 +1,7 @@
 import { useAuth } from "../hooks/useAuth";
-import Button from "../../../components/Button/Button";
 import AuthLink from "./AuthLink";
 import { getAuthInputs } from "../helpers/authInputs";
+import { Button } from "../../../components";
 
 const AuthForm = ({ isSignUp = false }) => {
   const {

@@ -2,8 +2,7 @@ import "./components/styles";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../Context/AuthContext";
-import TypewriterEffect from "../../components/TypewritterEffect/TyperwritterEffect";
-
+import { TypewriterEffect } from "../../components";
 import { Sidebar, NavLinks, AuthSection, MenuButton } from "./components";
 
 import { useModalsStore } from "../../store/modals/modals.store";

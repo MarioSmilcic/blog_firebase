@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import TypewriterEffect from "../../../components/TypewritterEffect/TyperwritterEffect";
-import Button from "../../../components/Button/Button";
 import { useModalsStore } from "../../../store/modals/modals.store";
+import { Button, TypewriterEffect } from "../../../components";
 
 export const SidebarHeader = () => {
   const navigate = useNavigate();

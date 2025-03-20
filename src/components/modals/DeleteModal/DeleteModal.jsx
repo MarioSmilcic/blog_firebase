@@ -1,13 +1,12 @@
 import React from "react";
-import Card from "../../Card/Card";
-import Button from "../../Button/Button";
+import { Button, Card } from "../../../components";
 import { useModalsStore } from "../../../store/modals/modals.store";
 import { useNotificationsStore } from "../../../store/notifications/notifications.store";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { deletePost } from "../../../services";
 import "./deleteModal.style.css";
 
-const DeleteModal = () => {
+export const DeleteModal = () => {
   const closeModal = useModalsStore((state) => state.closeModal);
   const post = useModalsStore((state) => state.post);
   const showNotification = useNotificationsStore(
@@ -51,5 +50,3 @@ const DeleteModal = () => {
     </div>
   );
 };
-
-export default DeleteModal;
