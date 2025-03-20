@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import "../home.style.css";
 import { TrashIcon, EditIcon } from "../../../components";
 
-import { useModalsStore } from "../../../store/modals/modals.store";
+import { useModalsStore } from "../../../store";
 import { auth } from "../../../services";
 
 const BlogPost = ({ id, title, content: blogPost, author, authorId }) => {
