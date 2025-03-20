@@ -1,7 +1,7 @@
 import { getButtonClass } from "./helpers/buttonStyles";
 import "./button.style.css";
 
-const Button = ({ text, disabled, type = "button", onClick }) => {
+export const Button = ({ text, disabled, type = "button", onClick }) => {
   const classes = getButtonClass(text);
 
   return (
@@ -15,5 +15,3 @@ const Button = ({ text, disabled, type = "button", onClick }) => {
     </button>
   );
 };
-
-export default Button;

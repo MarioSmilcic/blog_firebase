@@ -1,6 +1,6 @@
 import "./card.style.css";
 
-const Card = ({ children, title, className = "" }) => {
+export const Card = ({ children, title, className = "" }) => {
   return (
     <div className="card-container">
       <div className={`card ${className}`}>
@@ -10,5 +10,3 @@ const Card = ({ children, title, className = "" }) => {
     </div>
   );
 };
-
-export default Card;

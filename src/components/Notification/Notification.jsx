@@ -1,8 +1,8 @@
-import Card from "../Card/Card";
+import { Card } from "../../components";
 import { useNotificationsStore } from "../../store/notifications/notifications.store";
 import "./notification.style.css";
 
-const Notification = () => {
+export const Notification = () => {
   const { message, type } = useNotificationsStore();
 
   if (!message) return null;
@@ -13,5 +13,3 @@ const Notification = () => {
     </div>
   );
 };
-
-export default Notification;

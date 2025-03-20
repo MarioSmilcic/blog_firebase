@@ -4,10 +4,13 @@ import { useModalsStore } from "../../store/modals/modals.store";
 import "./home.style.css";
 
 import BlogPost from "./components/BlogPost";
-import DeleteModal from "../../components/modals/DeleteModal/DeleteModal";
-import EditModal from "../../components/modals/EditModal/EditModal";
-import Backdrop from "../../components/modals/Backdrop/Backdrop";
-import TypewriterEffect from "../../components/TypewritterEffect/TyperwritterEffect";
+
+import {
+  TypewriterEffect,
+  DeleteModal,
+  EditModal,
+  Backdrop,
+} from "../../components";
 
 const Home = () => {
   const isOpen = useModalsStore((state) => state.isOpen);

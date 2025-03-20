@@ -1,8 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import Card from "../../Card/Card";
-import Button from "../../Button/Button";
+import { Button, Card } from "../../../components";
 import { useModalsStore } from "../../../store/modals/modals.store";
 import { useNotificationsStore } from "../../../store/notifications/notifications.store";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
@@ -10,7 +9,7 @@ import { updatePost } from "../../../services";
 import { editPostSchema } from "../../../validation/editPostSchema";
 import "./editModal.style.css";
 
-const EditModal = () => {
+export const EditModal = () => {
   const closeModal = useModalsStore((state) => state.closeModal);
   const post = useModalsStore((state) => state.post);
   const showNotification = useNotificationsStore(
@@ -112,5 +111,3 @@ const EditModal = () => {
     </div>
   );
 };
-
-export default EditModal;

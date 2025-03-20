@@ -1,6 +1,5 @@
 import { useContactForm } from "./hooks/useContactForm";
-import TypewriterEffect from "../../components/TypewritterEffect/TyperwritterEffect";
-import Button from "../../components/Button/Button";
+import { Button, TypewriterEffect } from "../../components";
 import { contactInputs } from "../../data/app-data";
 import "./contact.style.css";
 

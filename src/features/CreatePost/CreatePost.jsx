@@ -3,11 +3,10 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { createPost } from "../../services";
 import { useNavigate } from "react-router-dom";
-import Button from "../../components/Button/Button";
 import { useNotificationsStore } from "../../store/notifications/notifications.store";
 import { createPostSchema } from "../../validation/createPostSchema";
 import "./createPost.styles.css";
-import TypewriterEffect from "../../components/TypewritterEffect/TyperwritterEffect";
+import { Button, TypewriterEffect } from "../../components";
 
 const CreatePost = () => {
   const navigate = useNavigate();

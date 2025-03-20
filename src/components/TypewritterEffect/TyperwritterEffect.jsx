@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./typewritterEffect.style.css";
 
-const TypewriterEffect = ({ text, speed = 100 }) => {
+export const TypewriterEffect = ({ text, speed = 100 }) => {
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -23,5 +23,3 @@ const TypewriterEffect = ({ text, speed = 100 }) => {
     </span>
   );
 };
-
-export default TypewriterEffect;
